@@ -1,11 +1,9 @@
-nome00 = input('Digite seu primeiro nome: ')
-emprego00 = input('Digite seu emprego dos sonhos: ')
-salario = int(input('Digite seu salário: '))
-gasto = int(input('Digite seus gatos: '))
+n1 = int(input('Digite um número:'))
+n2 = int(input('Digite outro número:'))
 
-conta = salario - gasto
+conta = n1+n2
 # Melhor forma de colocar no print as variaveis com as informação
-print(f'seu nome é: {nome00}, e seu emprego vai ser {emprego00} com um salario de {salario} ')
+print(f'A soma de {n1} + {n2} foi = {conta}')
 
 
 #Isto é o básico
