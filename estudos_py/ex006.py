@@ -1,6 +1,6 @@
 # algoritimo que pega o preço de um produto e coloca 5% de desconto | 0,05
 p1 =(input('Digite o nome do produto que ira entra em promoção: '))
-d1 = int(input('Digite o valor atual do produto: ')) 
+d1 = float(input('Digite o valor atual do produto: ')) 
 
 desconto = d1 * 0.05
 
