@@ -1,7 +1,7 @@
 num = [2,1,6,9,3]
 num[2] = 3 # subistituiu o da posição
 num.append(7)# adiciona o número no final da lista
-num.sort(reverse=True)# muda a ordem da lista, os ultimos serao os primeiros
+num.sort(reverse=True)# muda a ordem da lista, os ultimos serao os primeiros, sem o Tue ela vai ser a ordem normal
 num.insert(2,0)# no lugar 2 coloca 0 | adiciona no lugar desejado
 num.pop(3)# Deleta o elemento selecionado
 if 2 in num:
