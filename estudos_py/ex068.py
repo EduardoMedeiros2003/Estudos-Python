@@ -3,10 +3,10 @@ pilha = []
 
 for simb in expressao:
     if simb == '(':
-        pilha.append('(')
+        pilha.append('(')# Adiciona um ( a pilha 
     elif simb == ')':
         if len(pilha) > 0:
-            pilha.pop()
+            pilha.pop()# remove o último elemento
         else:
             pilha.append(')')
             break
