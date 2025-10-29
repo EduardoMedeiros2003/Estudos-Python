@@ -9,7 +9,7 @@ dados['carteira_de_trabalho'] = int(input('Digite o número da carteira de traba
 
 if dados['carteira_de_trabalho'] !=0:
     dados['ano_de_contratacao'] = int(input('Ano de contratação: '))
-    dados['salario'] = float(input('Salário: '))
+    dados['salario'] = float(input('Salário: R$'))
     print('Analisando...')
 else:
     print('Analisando...')
@@ -24,9 +24,12 @@ print(f'Carteira de trabalho: {dados["carteira_de_trabalho"]}')
 if dados['carteira_de_trabalho'] == 0:
     print('Não teve contrato assinado.')
 else:
-    aponsentadoria = dados["idade"] + 35
+    aponsentadoria = dados["idade"]+(dados["ano_de_contratacao"] + 35) - ano_atual
     print(f'Contratação: {dados["ano_de_contratacao"]}')
     print(f'Sua aposentadoria você tera uma idade de : {aponsentadoria}')
+print('-='*30)
+for k, v in dados.items():
+    print(f'-> {k} tem o valor de : {v}')
 
 #com quantos anos vai se aposentar 35 anos de colaboração
 # ano que começou
