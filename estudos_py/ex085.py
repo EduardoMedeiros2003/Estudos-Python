@@ -19,6 +19,8 @@ def somap(lista):
     print(f'temos os números pares: {pares}, e a soma de todos é: {soma}')
         
 #Programa principal 
+print('-='*50)
 numero = list()
 sorteia(numero)
 somap(numero) 
+print('-='*50)
