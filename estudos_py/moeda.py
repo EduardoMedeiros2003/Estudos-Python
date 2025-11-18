@@ -21,9 +21,20 @@ def resumo(num=0,taxaa=0,taxar=5):
     print('-'*30)
     print('RESUMO DO VALOR'.center(30))
     print('-'*30)
-    print(f'Preço analisado: {moeda(num)}')
-    print(f'Dobro do preço: {dobro(num,True)}')
-    print(f'Metade do valor: {metade(num,True)}')
-    print(f'{taxaa}% de aumento:{aumentar(num,taxaa, True)}')
-    print(f'{taxar}% de redução : {diminuir(num,taxar, True)}')
+    print(f'Preço analisado: \t{moeda(num):>10}')
+    print(f'Dobro do preço  : \t{dobro(num,True):>10}')
+    print(f'Metade do valor : \t{metade(num,True):>10}')
+    print(f'{taxaa}% de aumento :\t{aumentar(num,taxaa, True):>10}')
+    print(f'{taxar}% de redução : \t{diminuir(num,taxar, True):>10}')
     print('-'*30)
+
+def leia_dinheiro(msg):
+    valido = False
+    while not valido:
+        entrada = str(input(msg)).replace(',','.').strip()
+        if entrada.isalpha() or entrada == '':
+            print('ERRO: é um valor invalido!')
+        else:
+            valido = True
+            return float(entrada)
+#falta o tratamento de erro se for com int e str no input

@@ -1,4 +1,4 @@
-from moeda import moeda
+import moeda
 
-num = float(input('Informe um valor em real: R$'))
+num = moeda.leia_dinheiro('Informe um valor em real: R$')
 moeda.resumo(num,80,15)
