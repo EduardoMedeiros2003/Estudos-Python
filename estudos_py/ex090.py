@@ -23,6 +23,21 @@ def notas(*n, sit=False):
 def linha():
     print('-'*56)
 
+def leia_float(msg):
+        while True:
+            try:
+                valor = float(input(msg))
+                return valor
+            except:
+                print('Erro! Digite um número válido.')   
+
+def leia_s_n(msg):
+    while True:
+        resp = input(msg).strip().upper()[0]
+        if resp in ('S', 'N'):
+            return resp
+        print('Erro! Digite apenas S ou N.')
+
 #Programa principal
 linha()
 print('        Analisando notas de Alunos!')
@@ -37,10 +52,10 @@ aluno = 1
 
 #Laço de repetção para ir lendo as notas e perguntando se tem mais notas para ser adicionadas
 while True:
-    nota = float(input(f'Infome a nota do aluno {aluno}: '))
+    nota = leia_float(f'Infome a nota do aluno {aluno}: ')
     valores.append(nota)
     aluno += 1
-    rep = str(input('Deseja adicionar outra nota de aluno?: [S/N]: ')).strip().upper()[0]
+    rep = leia_s_n('Quer adicionar outra nota de aluno? [S/N]: ')
     if rep == 'N':
         break
 
