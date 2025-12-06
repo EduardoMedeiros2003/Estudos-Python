@@ -1,9 +1,4 @@
-lista_numeros = [10, 5, 8, 3, 7,2,120]
-soma = 0
+from funcao import main
 
-try:
-    for numero in lista_numeros:
-        soma += numero
-    print(f"Soma dos elementos: {soma}")
-except Exception as e:
-    print(f"Ocorreu um erro: {e}")
+if __name__ == "__main__":
+    main()
