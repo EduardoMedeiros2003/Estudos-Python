@@ -22,3 +22,4 @@ elif idade > 18 and sexo == 'h':
     print(f'Seu alistamento foi em {ano}.')
 elif sexo == 'm':
     print('Você não precisa se alistar')
+
