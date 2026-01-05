@@ -29,15 +29,5 @@ class Restaurante:
         self._ativo = not self._ativo # O not inverte o valor
 
 
-restaurante_praca = Restaurante('Praça', 'Gourmet')
-restaurante_praca.alternar_estado()
-restalrante_pizza = Restaurante('Pizarele', 'Italiana')
-
-verifica = restalrante_pizza.ativo
-if verifica == False:
-    print('O restaurante esta desativado!')
-else:
-    print('O restaurante esta ativado')
 
 #O vars(é para ver em formato de dicionario)
-Restaurante.listar_restaurantes()
