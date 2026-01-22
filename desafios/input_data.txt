@@ -1,0 +1,8 @@
+Nome: Eduardo
+Idade: 22
+Nome: Lucas
+Idade: 30
+Nome: Carlos
+Idade: 28
+Nome: Betinha
+Idade: 59
