@@ -13,12 +13,21 @@ cursor = conn.cursor()
 #    """
 #)
 
+#cursor.execute(
+#    """
+#        SELECT * FROM disciplinas
+#    """
+#)
+
+# Aqui vai pegar todos os alunos que estão matriculados em disciplinas, mostrando a disciplina e o nome| Consulta conjunta entre as duas tabelas criadas 
 cursor.execute(
     """
-        SELECT * FROM disciplinas
+        SELECT estudantes.nome, disciplinas.nome_disciplina FROM disciplinas JOIN estudantes ON disciplinas.estudante_id
     """
 )
 conn.commit()
+
+print(cursor.fetchall())
 
 diciplinas = cursor.fetchall()
 for diciplina in diciplinas:
