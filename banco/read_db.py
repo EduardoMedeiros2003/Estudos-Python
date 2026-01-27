@@ -1,0 +1,23 @@
+import sqlite3
+
+conn = sqlite3.connect('escola1.db')
+cursor = conn.cursor()
+
+#Criando comando de LEITURA do SQL:
+
+# SELECT = consulta o banco | *FROM = Pega todas as ocorrencias da tabela
+cursor.execute(
+    """
+    SELECT * FROM estudantes
+    """
+)
+
+conn.commit()
+
+# este comando vai salvar tudo que ele conseguiu achar do do comando anterior do banco de dados e salvar em estudantes, para ver o que tem nele so fazer um luoop for
+estudantes = cursor.fetchall()
+
+for estudante in estudantes:
+    print(estudante)
+
+conn.close()
