@@ -6,18 +6,29 @@ cursor = conn.cursor()
 #Criando comando de LEITURA do SQL:
 
 # SELECT = consulta o banco | *FROM = Pega todas as ocorrencias da tabela
+
+#cursor.execute(
+#    """
+#    SELECT * FROM estudantes
+#    """
+#)
+
 cursor.execute(
     """
-    SELECT * FROM estudantes
+        SELECT * FROM disciplinas
     """
 )
-
 conn.commit()
 
-# este comando vai salvar tudo que ele conseguiu achar do do comando anterior do banco de dados e salvar em estudantes, para ver o que tem nele so fazer um luoop for
-estudantes = cursor.fetchall()
+diciplinas = cursor.fetchall()
+for diciplina in diciplinas:
+    print(diciplina)
 
-for estudante in estudantes:
-    print(estudante)
+# este comando vai salvar tudo que ele conseguiu achar do do comando anterior do banco de dados e salvar em estudantes, para ver o que tem nele so fazer um luoop for
+
+#estudantes = cursor.fetchall()
+
+#for estudante in estudantes:
+#    print(estudante)
 
 conn.close()
