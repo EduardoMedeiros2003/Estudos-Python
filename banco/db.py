@@ -77,9 +77,11 @@ def criar_matricula(estudante_id, nome_disciplina):
 def listar_matriculas():
     conn = conectar()
     cursor = conn.cursor()
+    #o JOIN esta trocando o id dos estudantes pelo nome dos proprios estudantes, pa ra uma melhor visualização
     cursor.execute(
         """
-            SELECT * FROM matriculas
+            SELECT matriculas.id, estudantes.nome, matriculas.nome_disciplina FROM matriculas
+            JOIN estudantes ON matriculas.estudante_id = estudantes.id
         """
     )
     matriculas = cursor.fetchall()
