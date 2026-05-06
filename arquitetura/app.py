@@ -1,20 +1,25 @@
 import tkinter as tk
+from tkinter import messagebox
 
 atendentes = []
 
-def adicionar_atentendes():
+def adicionar_atendente():
     nome = entrada_nome.get().strip()
     if not nome:
-        #pendente 
+        messagebox.showwarning('Nome vazio','Digite um nome!')
         return
     
-    #Verifica se o nome do atendente esta em uma lista de uma unica linha
     if nome in [a['nome'] for a in atendentes]:
-        #pendente
+        messagebox.showinfo('Duplicado', 'Atendente já existe.')
         return
     
     atendentes.append({'nome': nome, 'vendas': 0})
-    entrada_nome.delete(0, tk.END) #Limpa caixa de texto
+    entrada_nome.delete(0, tk.END)
+
+def resetar_atendentes():
+    #Vai perguntar yes or no
+    if messagebox.askyesno('Resetar', 'Tem certeza que deseja resetar todos os dados?'):
+        atendentes.clear()
 
 #Interface principal
 janela = tk.Tk()
@@ -22,3 +27,15 @@ janela.title('Controle de vendas - Smart View')
 
 entrada_nome = tk.Entry(janela)
 entrada_nome.pack(pady=5)
+
+botao_adicionar = tk.Button(janela, text="Adicionar Atendente", command=adicionar_atendente)
+botao_adicionar.pack()
+
+botao_resetar = tk.Button(janela, text="Resetar", command=resetar_atendentes)
+botao_resetar.pack()
+
+quadro_atendentes = tk.Frame(janela)
+
+quadro_atendentes.pack(pady=10) #margem de 10px
+
+janela.mainloop()
