@@ -16,3 +16,6 @@ def resetar_atendentes():
 
 def incrementar_vendas(indice):
     atendentes[indice]['vendas'] += 1
+
+def obter_atendentes():
+    return atendentes

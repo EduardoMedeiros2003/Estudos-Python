@@ -29,7 +29,7 @@ def atualizar_interface():
     for widget in quadro_atendentes.winfo_children():
         widget.destroy()
     
-    for i, atendente in enumerate(document.atendentes):# Não é recomendando fazer isso, esta fazendo a fim de testes
+    for i, atendente in enumerate(document.obter_atententes):
         texto = f"{atendente['nome']}: {atendente['vendas']} vendas"
         rotulo = tk.Label(quadro_atendentes, text=texto)
         rotulo.grid(row=i, column=0, sticky="w")
