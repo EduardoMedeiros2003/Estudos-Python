@@ -1,0 +1,18 @@
+atendentes = []
+
+def adicionar_atendente(nome):
+    if not nome:
+        return 'vazio'
+    
+    if nome in [a['nome'] for a in atendentes]:
+        return 'duplicado'
+    
+    atendentes.append({'nome': nome, 'vendas': 0})
+    return 'ok'
+
+def resetar_atendentes():
+    #Vai perguntar yes or no
+    atendentes.clear()
+
+def incrementar_vendas(indice):
+    atendentes[indice]['vendas'] += 1
